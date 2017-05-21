@@ -12,6 +12,10 @@
 		187235AA1ED16D5300EFC81D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187235A81ED16D5300EFC81D /* Main.storyboard */; };
 		187235AC1ED16D5300EFC81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187235AB1ED16D5300EFC81D /* Assets.xcassets */; };
 		187235AF1ED16D5300EFC81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187235AD1ED16D5300EFC81D /* LaunchScreen.storyboard */; };
+		187235FB1ED173E200EFC81D /* avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 187235F81ED173E200EFC81D /* avatar.jpeg */; };
+		187235FC1ED173E200EFC81D /* avatar_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 187235F91ED173E200EFC81D /* avatar_default@2x.png */; };
+		187235FD1ED173E200EFC81D /* avatar_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 187235FA1ED173E200EFC81D /* avatar_default@3x.png */; };
+		1872360B1ED1B2F600EFC81D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872360A1ED1B2F600EFC81D /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		187235AB1ED16D5300EFC81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187235AE1ED16D5300EFC81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187235B01ED16D5300EFC81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187235F81ED173E200EFC81D /* avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpeg; sourceTree = "<group>"; };
+		187235F91ED173E200EFC81D /* avatar_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_default@2x.png"; sourceTree = "<group>"; };
+		187235FA1ED173E200EFC81D /* avatar_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_default@3x.png"; sourceTree = "<group>"; };
+		1872360A1ED1B2F600EFC81D /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,30 @@
 				187235A61ED16D5300EFC81D /* ViewController.swift */,
 				187235A81ED16D5300EFC81D /* Main.storyboard */,
 				187235AB1ED16D5300EFC81D /* Assets.xcassets */,
+				187235FE1ED1B1A700EFC81D /* Extension */,
+				187235F71ED173E200EFC81D /* picture */,
 				187235AD1ED16D5300EFC81D /* LaunchScreen.storyboard */,
 				187235B01ED16D5300EFC81D /* Info.plist */,
 			);
 			path = ImagePerformanceOptimization;
+			sourceTree = "<group>";
+		};
+		187235F71ED173E200EFC81D /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				187235F81ED173E200EFC81D /* avatar.jpeg */,
+				187235F91ED173E200EFC81D /* avatar_default@2x.png */,
+				187235FA1ED173E200EFC81D /* avatar_default@3x.png */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
+		187235FE1ED1B1A700EFC81D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1872360A1ED1B2F600EFC81D /* UIImage+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +151,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187235FD1ED173E200EFC81D /* avatar_default@3x.png in Resources */,
+				187235FC1ED173E200EFC81D /* avatar_default@2x.png in Resources */,
 				187235AF1ED16D5300EFC81D /* LaunchScreen.storyboard in Resources */,
 				187235AC1ED16D5300EFC81D /* Assets.xcassets in Resources */,
+				187235FB1ED173E200EFC81D /* avatar.jpeg in Resources */,
 				187235AA1ED16D5300EFC81D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1872360B1ED1B2F600EFC81D /* UIImage+Extension.swift in Sources */,
 				187235A71ED16D5300EFC81D /* ViewController.swift in Sources */,
 				187235A51ED16D5300EFC81D /* AppDelegate.swift in Sources */,
 			);

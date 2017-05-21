@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UIImage+Extension.swift
 //  ImagePerformanceOptimization
 //
 //  Created by 王红庆 on 2017/5/21.
@@ -8,36 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let image = UIImage(named: "avatar_default")
-//        let image = UIImage(named: "avatar.jpeg")
-        
-        for _ in 0..<100 {
-            
-            let imageView01 = UIImageView(frame: CGRect(x: 100, y: 100, width: 160, height: 160))
-            imageView01.image = image
-            view.addSubview(imageView01)
-            
-            let rect02 = CGRect(x: 100, y: 300, width: 160, height: 160)
-            let imageView02 = UIImageView(frame: rect02)
-            imageView02.image = avatarImage(image: image!, size: rect02.size, backColor: view.backgroundColor)
-            view.addSubview(imageView02)
-        }
-    }
-
-    /// 将给定的图像进行拉伸,并且返回新的图像
+extension UIImage {
+    
+    /// 创建头像图像
     ///
     /// - Parameters:
     ///   - image: 原图
     ///   - size: 目标尺寸
     /// - Returns: 返回一个新的'目标尺寸'的图像
-    func avatarImage(image: UIImage, size: CGSize, backColor:UIColor?) -> UIImage? {
+    func qq_avatarImage(size: CGSize?, backColor: UIColor = UIColor.white, lineColor: UIColor = UIColor.lightGray) -> UIImage? {
         
-        let rect = CGRect(origin: CGPoint(), size: size)
+        var size = size
+        if size == nil {
+            size = self.size
+        }
+        
+        let rect = CGRect(origin: CGPoint(), size: size!)
         
         // 1.图像的上下文-内存中开辟一个地址,跟屏幕无关
         /**
@@ -49,7 +35,7 @@ class ViewController: UIViewController {
         UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
         
         // 背景填充(在裁切之前做填充)
-        backColor?.setFill()
+        backColor.setFill()
         UIRectFill(rect)
         
         // 1> 实例化一个圆形的路径
@@ -58,9 +44,15 @@ class ViewController: UIViewController {
         path.addClip()
         
         // 2.绘图'drawInRect'就是在指定区域内拉伸屏幕
-        image.draw(in: rect)
+        draw(in: rect)
         
         // 3.绘制内切的圆形
+//        let ovalPath = UIBezierPath(ovalIn: rect)
+//        ovalPath.lineWidth = 2
+//        lineColor.setStroke()
+//        ovalPath.stroke()
+        
+        
         UIColor.darkGray.setStroke()
         path.lineWidth = 5      // 默认是'1'
         path.stroke()
@@ -75,4 +67,3 @@ class ViewController: UIViewController {
         return result
     }
 }
-
