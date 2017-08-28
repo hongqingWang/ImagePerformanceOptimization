@@ -15,6 +15,7 @@
 		187235FB1ED173E200EFC81D /* avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 187235F81ED173E200EFC81D /* avatar.jpeg */; };
 		187235FC1ED173E200EFC81D /* avatar_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 187235F91ED173E200EFC81D /* avatar_default@2x.png */; };
 		187235FD1ED173E200EFC81D /* avatar_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 187235FA1ED173E200EFC81D /* avatar_default@3x.png */; };
+		18CE308E1F5411D0008D1587 /* HQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE308D1F5411D0008D1587 /* HQImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		187235F81ED173E200EFC81D /* avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpeg; sourceTree = "<group>"; };
 		187235F91ED173E200EFC81D /* avatar_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_default@2x.png"; sourceTree = "<group>"; };
 		187235FA1ED173E200EFC81D /* avatar_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_default@3x.png"; sourceTree = "<group>"; };
+		18CE308D1F5411D0008D1587 /* HQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		187235FE1ED1B1A700EFC81D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				18CE308D1F5411D0008D1587 /* HQImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CE308E1F5411D0008D1587 /* HQImage.swift in Sources */,
 				187235A71ED16D5300EFC81D /* ViewController.swift in Sources */,
 				187235A51ED16D5300EFC81D /* AppDelegate.swift in Sources */,
 			);

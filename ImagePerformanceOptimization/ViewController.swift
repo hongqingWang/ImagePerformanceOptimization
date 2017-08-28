@@ -24,12 +24,19 @@ class ViewController: UIViewController {
             
             let rect02 = CGRect(x: 100, y: 300, width: 160, height: 160)
             let imageView02 = UIImageView(frame: rect02)
-            imageView02.image = avatarImage(image: image!, size: rect02.size, backColor: view.backgroundColor)
+//            imageView02.image = avatarImage(image: image!, size: rect02.size, backColor: view.backgroundColor)
             view.addSubview(imageView02)
+            
+            // 封装的方法
+//            imageView02.image = image?.hq_rectImage(size: rect02.size)
+            imageView02.image = image?.hq_avatarImage(size: rect02.size)
         }
     }
+}
 
-
+/**************************************** 下面是练习的DEMO ****************************************/
+extension ViewController {
+    
     /// 将给定的图像进行拉伸,并且返回新的图像
     ///
     /// - Parameters:
@@ -76,4 +83,3 @@ class ViewController: UIViewController {
         return result
     }
 }
-
