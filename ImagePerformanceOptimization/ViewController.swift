@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         }
     }
 
+
     /// 将给定的图像进行拉伸,并且返回新的图像
     ///
     /// - Parameters:
