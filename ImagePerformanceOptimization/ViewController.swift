@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 //        let image = UIImage(named: "avatar.jpeg")
         
         for _ in 0..<100 {
-            
+        
             let imageView01 = UIImageView(frame: CGRect(x: 100, y: 100, width: 160, height: 160))
             imageView01.image = image
             view.addSubview(imageView01)
@@ -28,8 +28,8 @@ class ViewController: UIViewController {
             view.addSubview(imageView02)
             
             // 封装的方法
-//            imageView02.image = image?.hq_rectImage(size: rect02.size)
-            imageView02.image = image?.hq_avatarImage(size: rect02.size)
+            imageView02.image = image?.hq_rectImage(size: rect02.size)
+//            imageView02.image = image?.hq_avatarImage(size: rect02.size)
         }
     }
 }
