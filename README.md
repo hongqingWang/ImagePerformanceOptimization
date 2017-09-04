@@ -401,4 +401,52 @@ for _ in 0..<100 {
 
 > 由此可见，新方法对CPU消耗明显减少，内存较以前稍微上涨，CPU消耗减少，则性能有所提升。（因为每次消耗不是一个定数，我这里也是测了很多次取的大概的平均值。）
 
+---
+
+## 2017年08月30日补充
+
+感谢[**linbx08**](https://github.com/linbx08)给我提出的问题，是一个关于矩形图像调用我的方法`hq_rectImage`图像右侧显示黑线的问题。
+
+![](http://upload-images.jianshu.io/upload_images/2069062-7244115d5e4c7e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](http://upload-images.jianshu.io/upload_images/2069062-d3cf484ef42abe11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+解决办法是在开启图形上下文后，对其做背景填充。
+
+```swift
+// 背景填充(在裁切之前做填充)
+backColor.setFill()
+UIRectFill(rect)
+```
+
+但黑线的原因暂时尚未查明。我之前的思路是按照做圆形头像的代码继续做的。直接`UIBezierPath(rect: rect)`实例化了一个矩形的路径，然后在路径内绘图。但是突然想到不用裁切，不用设置圆形头像的边框，突然感觉这样就有点多此一举了，因此将多余的代码就都删除了。没想到删多了，出问题了，不过好在有人及时给我提出了问题。并帮助我改正、再次感谢！
+
+---
+
+## 2017年09月04日补充
+
+#### 又发现一个问题
+
+就是如果按照最之前写的代码，在设置矩形图片时，如果不在开启图形上下文后，对背景做填充，那么当你的图像不是一个矩形的时候(是任意的不规则形状)，那么，背景被填充的是黑色，在你的图形以外的范围内会被看见。如下图
+
+![](http://upload-images.jianshu.io/upload_images/2069062-0b57be0e88fb645b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+看下我写的代码
+
+```swift
+class HQACellTopView: UIView {
+
+    var viewModel: HQStatusViewModel? {
+        didSet {
+            memberIconView.image = viewModel?.memberIcon?.hq_rectImage(size: CGSize(width: 50, height: 50))
+        }
+    }
+```
+
+![](http://upload-images.jianshu.io/upload_images/2069062-124f88a4dece9a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+解决办法同之前的方式，开启图形上下文后，填充背景色就OK了。
+
+![](http://upload-images.jianshu.io/upload_images/2069062-3bcca04d7a33a195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **简书地址 : [Swift-图像的性能优化](http://www.jianshu.com/p/d49be5f77b7f)**
